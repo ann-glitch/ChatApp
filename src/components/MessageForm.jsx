@@ -1,9 +1,9 @@
 const MessageForm = () => {
-    
+
     return (
-        <div>
-            Message Form
-        </div>
+       <div>
+        MessageForm
+       </div>
     )
 }
 
