@@ -123,6 +123,7 @@
   font-size: 16px;
   border-radius: 6px;
   max-width: 60%;
+  background-color: rgb(108, 57, 121);
 }
 
 .message-image {

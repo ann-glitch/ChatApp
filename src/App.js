@@ -1,15 +1,18 @@
 import { ChatEngine } from "react-chat-engine";
 import "./App.css";
 import ChatFeed from "./components/ChatFeed";
+import LoginForm from "./components/LoginForm";
 
-function App() {
+const App = () => {
+  if (!localStorage.getItem("username")) return <LoginForm />;
+
   return (
     <div className="App">
       <ChatEngine
         height="100vh"
         projectID={process.env.REACT_APP_PROJECT_ID}
-        userName="ann"
-        userSecret={process.env.REACT_APP_USER_SECRET}
+        userName={localStorage.getItem("username")}
+        userSecret={localStorage.getItem("password")}
         renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
         onNewMessage={() =>
           new Audio(
@@ -19,6 +22,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
